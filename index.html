@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de citas Medacdent</title>
+    <link rel="stylesheet" href="./styles.css">
+    
+</head>
+<body>
+    <header>
+        <h1>Medacdent - Gestión de citas</h1>
+    </header>
+
+    <main>
+    <form id="citaForm">
+        <input type="hidden" id="editIndex" value="-1">
+        <h1>Gestión de citas</h1>
+        <label>
+            DNI:
+            <input type="text" id="dni" required pattern="^\d{8}[A-Z]$"  title="El DNI debe tener 8 dígitos seguidos de una letra.">
+        </label>
+        <label>
+            Primer Apellido:
+            <input type="text" id="primerApellido" required pattern="^[A-Za-záéíóúÁÉÍÓÚüÜ]+( [A-Za-záéíóúÁÉÍÓÚüÜ]+)*$" title="Solo se permiten letras, espacios, guiones y apóstrofes.">
+        </label>
+        <label>
+            Segundo Apellido:
+            <input type="text" id="segundoApellido" required pattern="^[A-Za-záéíóúÁÉÍÓÚüÜ]+( [A-Za-záéíóúÁÉÍÓÚüÜ]+)*$" title="Solo se permiten letras, espacios, guiones y apóstrofes.">
+        </label>
+        <label>
+            Nombre:
+            <input type="text" id="nombre" required pattern="^[A-Za-záéíóúÁÉÍÓÚüÜ]+( [A-Za-záéíóúÁÉÍÓÚüÜ]+)*$"  title="Solo se permiten letras, espacios, guiones y apóstrofes.">
+        </label>
+        <label>
+            Teléfono:
+            <input type="tel" id="telefono" required pattern="^[67]\d{8}$" title="El teléfono debe tener 9 dígitos">
+        </label>
+        <label>
+            Fecha:
+            <input type="date" id="fecha" required>
+        </label>
+        <label>
+            Hora:
+            <input type="time" id="hora" required>
+        </label>
+        <button type="submit">Guardar Cita</button>
+    </form>
+
+    <table id="tablaCitas">
+        <thead>
+            <tr>
+                <th>DNI</th>
+                <th>Primer Apellido</th>
+                <th>Segundo Apellido</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Las citas se agregarán aquí -->
+        </tbody>
+    </table>
+</main>
+    <footer>
+        <p>Contacto: info@medacdent.com | Tel: +34 123 456 789</p>
+        <p>&copy; 2024 MedacDent. Todos los derechos reservados.</p>
+    </footer>
+    <script src="/app.js"></script>
+</body>
+</html>
